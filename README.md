@@ -1,4 +1,4 @@
-duckranger-mvc-tutorial
+mvc-tutorial
 =======================
 
 Spring MVC tutorial on duckranger.com
