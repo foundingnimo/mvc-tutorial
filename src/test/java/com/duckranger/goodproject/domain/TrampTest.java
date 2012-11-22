@@ -22,7 +22,7 @@ public class TrampTest {
 	Tramp t = new Tramp();
 	t.setName("Tongariro Northern Circuit");
 	t.setDistance(48.0);
-	t.setDifficulty(Difficulty.ROUTE);
+	t.setDifficulty(Difficulty.EASY_TRAMP);
 	trampsService.save(t);
 	long id = t.getId();
 	t = null;
