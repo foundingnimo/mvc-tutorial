@@ -13,6 +13,7 @@
     <table class="normal-table">
         <thead>
             <tr>
+            	<th>Id</th>
                 <th>Name</th>
                 <th>Distance</th>
                 <th>Difficulty</th>
@@ -21,6 +22,7 @@
         <tbody>
         <c:forEach var="tramp" items="${tramps}">
             <tr>
+            	<td>${tramp.id }</td>
                 <td>${tramp.name}</td>
                 <td>${tramp.distance}</td>
                 <td>${tramp.difficulty.description }</td>
