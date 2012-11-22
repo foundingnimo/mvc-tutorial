@@ -1,37 +1,36 @@
 package com.duckranger.goodproject.service;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.duckranger.goodproject.domain.Tramp;
+import com.duckranger.goodproject.repository.TrampRepository;
 
 @Service
 public class TrampsService {
 
-    private Map<Long, String> tramps;
     private static final Logger logger = LoggerFactory.getLogger(TrampsService.class);
 
-    public TrampsService() {
-	tramps = new HashMap<Long, String>();
-	populate(tramps);
+    @Autowired
+    private TrampRepository trampRepository;
+
+    public Iterable<Tramp> findAll() {
+	return trampRepository.findAll();
     }
 
-    public Map<Long, String> findAll() {
-	logger.info("Retrieving Walks");
-	return tramps;
+    public Tramp save(Tramp t) {
+	return trampRepository.save(t);
     }
 
-    private void populate(Map<Long, String> tramps) {
-	tramps.put(1L, "Lake Waikaremoana Great Walk");
-	tramps.put(2L, "Tongariro Northern Circuit");
-	tramps.put(3L, "Whanganui Journey");
-	tramps.put(4L, "Abel Tasman Coast Track");
-	tramps.put(5L, "Heaphy Track");
-	tramps.put(6L, "Kepler Track");
-	tramps.put(7L, "Milford Track");
-	tramps.put(8L, "Routeburn Track");
-	tramps.put(9L, "Rakiura Track");
+    public void delete(Long id) {
+	trampRepository.delete(id);
     }
+
+    public Tramp findOne(Long id) {
+	return trampRepository.findOne(id);
+    }
+
+    // more methods from TrampRepository
 }

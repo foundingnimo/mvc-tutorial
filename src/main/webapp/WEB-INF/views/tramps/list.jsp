@@ -13,15 +13,17 @@
     <table class="normal-table">
         <thead>
             <tr>
-                <th>Key</th>
                 <th>Name</th>
+                <th>Distance</th>
+                <th>Difficulty</th>
             </tr>
         </thead>
         <tbody>
         <c:forEach var="tramp" items="${tramps}">
             <tr>
-                <td>${tramp.key}</td>
-                <td>${tramp.value}</td>
+                <td>${tramp.name}</td>
+                <td>${tramp.distance}</td>
+                <td>${tramp.difficulty.description }</td>
             </tr>
         </c:forEach>
         </tbody>
